@@ -17,30 +17,30 @@
     />
     <link
       rel="stylesheet"
-      href="./src/css/jquery-ui-1.12.1.min_20.1102000.css"
+      href="/src/css/jquery-ui-1.12.1.min_20.1102000.css"
       type="text/css"
     />
 
     <link
       rel="stylesheet"
-      href="./src/css/opac_20.1102000.css"
+      href="/src/css/opac_20.1102000.css"
       type="text/css"
     />
 
     <link
       rel="stylesheet"
       media="print"
-      href="./src/css/print_20.1102000.css"
+      href="/src/css/print_20.1102000.css"
       type="text/css"
     />
 
-    <script src="./src/js/enquire.min_20.1102000.js"></script>
+    <script src="/src/js/enquire.min_20.1102000.js"></script>
 
     <!-- Esta libreria me está dando problemas:  $ is not defined -->
-    <script src="./src/js/script_20.1102000.js"></script>
+    <script src="/src/js/script_20.1102000.js"></script>
 
-    <script src="./src/js/locale_data_20.1102000.js"></script>
-    <script src="./src/js/Gettext_20.1102000.js"></script>
+    <script src="/src/js/locale_data_20.1102000.js"></script>
+    <script src="/src/js/Gettext_20.1102000.js"></script>
     <script>
       var Koha = {};
       function _(s) {
@@ -48,11 +48,11 @@
         // dummy function for gettext
       }
     </script>
-    <script src="./src/js/i18n_20.1102000.js"></script>
-    <script src="./src/js/modernizr.min_20.1102000.js"></script>
+    <script src="/src/js/i18n_20.1102000.js"></script>
+    <script src="/src/js/modernizr.min_20.1102000.js"></script>
     <link
       type="text/css"
-      href="./src/css/font-awesome.min_20.1102000.css"
+      href="/src/css/font-awesome.min_20.1102000.css"
       rel="stylesheet"
     />
   </head>
@@ -510,16 +510,16 @@
 
     <!-- JavaScript includes -->
 
-    <script src="./src/js/jquery-3.4.1.min_20.1102000.js"></script>
-    <script src="./src/js/jquery-migrate-3.1.0.min_20.1102000.js"></script>
-    <script src="./src/js/jquery-ui-1.12.1.min_20.1102000.js"></script>
+    <script src="/src/js/jquery-3.4.1.min_20.1102000.js"></script>
+    <script src="/src/js/jquery-migrate-3.1.0.min_20.1102000.js"></script>
+    <script src="/src/js/jquery-ui-1.12.1.min_20.1102000.js"></script>
     <script>
       // Resolve name collision between jQuery UI and Twitter Bootstrap
       $.widget.bridge("uitooltip", $.ui.tooltip);
     </script>
-    <script src="./src/js/bootstrap.bundle.min_20.1102000.js"></script>
-    <script src="./src/js/fontfaceobserver.min_20.1102000.js"></script>
-    <script src="./src/js/global_20.1102000.js"></script>
+    <script src="/src/js/bootstrap.bundle.min_20.1102000.js"></script>
+    <script src="/src/js/fontfaceobserver.min_20.1102000.js"></script>
+    <script src="/src/js/global_20.1102000.js"></script>
     <script>
       Modernizr.load([
         // Test need for polyfill
@@ -631,20 +631,20 @@
         return confirmDelete(MSG_DELETE_SEARCH_HISTORY);
       });
     </script>
-    <script src="./src/js/basket_20.1102000.js"></script>
-    <script src="./src/js/tags_20.1102000.js"></script>
-    <script src="./src/js/jquery.cookie.min_20.1102000.js"></script>
+    <script src="/src/js/basket_20.1102000.js"></script>
+    <script src="/src/js/tags_20.1102000.js"></script>
+    <script src="/src/js/jquery.cookie.min_20.1102000.js"></script>
     <script>
-        $(document).ready(function () {
-            if ($("#searchsubmit").length) {
-                $(document).on("click", "#searchsubmit", function (e) {
-                    jQuery.removeCookie("form_serialized", { path: "/" });
-                    jQuery.removeCookie("form_serialized_limits", { path: "/" });
+      $(document).ready(function () {
+        if ($("#searchsubmit").length) {
+          $(document).on("click", "#searchsubmit", function (e) {
+            jQuery.removeCookie("form_serialized", { path: "/" });
+            jQuery.removeCookie("form_serialized_limits", { path: "/" });
             jQuery.removeCookie("num_paragraph", { path: "/" });
             jQuery.removeCookie("search_path_code", { path: "/" });
-        });
-    }
-});
-</script>
+          });
+        }
+      });
+    </script>
   </body>
 </html>
