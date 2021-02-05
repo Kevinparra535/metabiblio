@@ -1,0 +1,200 @@
+@import "./../tokens/colors";
+@import "./../tokens/spacings";
+@import "./../tokens/typos";
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: get-opacity($color-claro, 1);
+}
+
+.nav {
+  padding: $space $space;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    display: flex;
+    align-items: center;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+    img {
+      width: 80px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  &__links {
+    padding: 0;
+    display: inherit;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    @include font-size($p);
+    a {
+      display: none;
+    }
+    img {
+      margin-right: $space_half;
+      width: 16px;
+      object-fit: cover;
+    }
+    &--primary {
+      display: none;
+    }
+    .menu {
+      outline: none;
+      border: none;
+      background-color: transparent;
+    }
+    .close {
+      display: none;
+    }
+  }
+  @include media(tablet) {
+    padding: $space_x2 $space_x4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__logo {
+      display: flex;
+      align-items: center;
+      a {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      img {
+        width: 120px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    &__links {
+      padding: 0 $space_x2;
+      display: inherit;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      @include font-size($p);
+      a {
+        padding: 0 $space;
+        display: inline-block;
+        margin: 0 $space;
+        text-decoration: none;
+        color: $color-oscuro;
+      }
+      img {
+        margin-right: $space_half;
+        width: 16px;
+        object-fit: cover;
+      }
+      &--primary {
+        padding: $space $space_x2;
+        display: inline-block;
+        margin-left: $space;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: $color-claro;
+        background-color: $color-primario;
+        @include font-size($p);
+        img {
+          margin-right: $space;
+          width: 16px;
+          object-fit: cover;
+        }
+        &:hover {
+          background-color: get-opacity($color-primario, 0.8);
+        }
+      }
+      .menu {
+        display: none;
+      }
+      .close {
+        display: none;
+      }
+    }
+  }
+}
+
+.responsive {
+  display: flex;
+  position: fixed;
+  .nav__links {
+    padding: $space_x2;
+    display: inherit;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 70%;
+    height: 100vh;
+    list-style: none;
+    transition: 0.5s;
+    overflow-x: hidden;
+    background-color: $color-claro;
+    animation-name: openSide;
+    animation-duration: 0.5s;
+    @include font-size($p);
+    a {
+      padding: $space $space;
+      display: block;
+      margin: 0;
+      min-width: 100%;
+      text-decoration: none;
+      color: $color-oscuro;
+    }
+    img {
+      margin-right: $space_half;
+      width: 16px;
+      object-fit: cover;
+    }
+    &--primary {
+      padding: $space $space_x2;
+      display: block;
+      margin: $space auto;
+      width: 100%;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: $color-claro;
+      background-color: $color-primario;
+      @include font-size($p);
+      img {
+        margin-right: $space;
+        width: 16px;
+        object-fit: cover;
+      }
+      &:hover {
+        background-color: get-opacity($color-primario, 0.8);
+      }
+    }
+    .menu {
+      display: none;
+    }
+    .close {
+      display: inline-block;
+      margin-bottom: $space_x2;
+      width: 100%;
+      text-align: right;
+      border: none;
+      color: $color-primario;
+      background-color: transparent;
+    }
+  }
+}
+
+@keyframes openSide {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}

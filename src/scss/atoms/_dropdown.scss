@@ -1,0 +1,33 @@
+@import "../Tokens/colors";
+@import "../Tokens/spacings";
+@import "../Tokens/typos";
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  &__content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    margin: $space 0;
+    min-width: 200px;
+    overflow: auto;
+    background-color: $color-claro;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    @include font-size($p);
+    a {
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+      color: $color-oscuro;
+      &:hover {
+        background-color: $color-bg-claro;
+      }
+    }
+  }
+}
+
+.show {
+  display: block;
+}

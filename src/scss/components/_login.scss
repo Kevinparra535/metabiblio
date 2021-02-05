@@ -1,0 +1,50 @@
+@import "./../tokens/colors";
+@import "./../tokens/spacings";
+@import "./../tokens/typos";
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  &__container {
+    padding: 0 $space_x2 $space_x2 $space_x2;
+    width: 100%;
+    background-color: $color-claro;
+    input {
+      @include inputs;
+    }
+    button {
+      margin: $space_half auto $space_x2 auto;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+    &--header {
+      padding: $space_x3 0;
+    }
+  }
+  @include media(desktop-s) {
+    width: 100%;
+    height: 80vh;
+    &__container {
+      padding: 0 $space_x3 $space_x3 $space_x3;
+      width: 50%;
+      border: 5px solid $color-oscuro;
+      background-color: $color-claro;
+      input {
+        @include inputs;
+      }
+      button {
+        margin: $space_half auto $space_x2 auto;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+      }
+      &--header {
+        padding: $space_x3 0;
+      }
+    }
+  }
+}

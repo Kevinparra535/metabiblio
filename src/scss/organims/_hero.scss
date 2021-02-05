@@ -1,0 +1,234 @@
+@import "../Tokens/colors";
+@import "../Tokens/spacings";
+@import "../Tokens/typos";
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+  background-color: get-opacity($color-primario, 0.7);
+  background: linear-gradient(
+    -45deg,
+    get-opacity($color-primario, 0.8),
+    get-opacity($color-variante, 0.6),
+    get-opacity($color-primario, 0.6),
+  );
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 10s ease infinite;
+  animation: gradientBG 10s ease infinite;
+  &__searchBox {
+    padding: $space_x3 0;
+    width: 90%;
+    &--header {
+      padding: $space 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      h1 {
+        color: $color-claro;
+      }
+      button {
+        border: none;
+        cursor: pointer;
+        outline: none;
+        background-color: transparent;
+        img {
+          width: 18px;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  @include media(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 70vh;
+    background-color: get-opacity($color-primario, 0.7);
+    &__searchBox {
+      padding: $space_x3 0;
+      width: 80%;
+      &--header {
+        padding: $space 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        h1 {
+          color: $color-claro;
+        }
+        button {
+          border: none;
+          cursor: pointer;
+          outline: none;
+          background-color: transparent;
+          img {
+            width: 18px;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  @include media(desktop-s) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    background-color: get-opacity($color-primario, 0.7);
+    &__searchBox {
+      padding: $space_x3 0;
+      width: 70%;
+      &--header {
+        padding: $space 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        h1 {
+          color: $color-claro;
+        }
+        button {
+          border: none;
+          cursor: pointer;
+          outline: none;
+          background-color: transparent;
+          img {
+            width: 18px;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  @include media(desktop-m) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    background-color: get-opacity($color-primario, 0.7);
+    &__searchBox {
+      padding: $space_x3 0;
+      width: 60%;
+      &--header {
+        padding: $space 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        h1 {
+          color: $color-claro;
+        }
+        button {
+          border: none;
+          cursor: pointer;
+          outline: none;
+          background-color: transparent;
+          img {
+            width: 18px;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero__searchBox--inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    button {
+      padding: $space $space_x2;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: $color-primario;
+      img {
+        width: 20px;
+      }
+    }
+  }
+  select {
+    @include selects;
+  }
+  input {
+    @include inputs;
+  }
+  @include media(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    p {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+      button {
+        padding: $space $space_x2;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: $color-primario;
+        img {
+          width: 20px;
+        }
+      }
+    }
+    select {
+      @include selects;
+    }
+    input {
+      @include inputs;
+    }
+  }
+}
+
+@-webkit-keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

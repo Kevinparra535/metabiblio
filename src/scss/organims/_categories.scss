@@ -1,0 +1,70 @@
+@import "./../tokens/colors";
+@import "./../tokens/spacings";
+@import "./../tokens/typos";
+
+.categories {
+  padding: $space_x4 $space;
+  text-align: left;
+  @include media(tablet){}
+  @include media(desktop-s){}
+  @include media(desktop-m){
+  padding: $space_x4;
+  }
+}
+
+.categorie {
+  padding: $space;
+  text-align: left;
+  h2 {
+    font-weight: $medium;
+    @include font-size($h3);
+  }
+  &__grid {
+    padding: $space_x3 0;
+    grid-gap: $space;
+    @include display-grid;
+    @include grid-template-columns(1fr 1fr);
+  }
+  @include media(tablet){
+    padding: $space_x2;
+    text-align: left;
+    h2 {
+      font-weight: $medium;
+      @include font-size($h3);
+    }
+    &__grid {
+      padding: $space_x3 $space;
+      grid-gap: $space;
+      @include display-grid;
+      @include grid-template-columns(1fr grid-repeat(3));
+    }
+  }
+  @include media(desktop-s){
+    padding: $space_x2;
+    text-align: left;
+    h2 {
+      font-weight: $medium;
+      @include font-size($h3);
+    }
+    &__grid {
+      padding: $space_x3 $space;
+      grid-gap: $space;
+      @include display-grid;
+      @include grid-template-columns(1fr grid-repeat(5));
+    }
+  }
+  @include media(desktop-m){
+    padding: $space_x4;
+    text-align: left;
+    h2 {
+      font-weight: $medium;
+      @include font-size($h3);
+    }
+    &__grid {
+      padding: $space_x3 $space;
+      grid-gap: $space;
+      @include display-grid;
+      @include grid-template-columns(1fr grid-repeat(7));
+    }
+  }
+}

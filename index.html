@@ -16,636 +16,116 @@
       type="image/x-icon"
     />
 
-    <link
-      rel="stylesheet"
-      href="src/lib/jquery/jquery-ui-1.12.1.min_20.1102000.css"
-      type="text/css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="/src/css/opac_20.1102000.css"
-      type="text/css"
-    />
-
-    <link
-      rel="stylesheet"
-      media="print"
-      href="/src/css/print_20.1102000.css"
-      type="text/css"
-    />
-
-    <script src="/src/lib/enquire.min_20.1102000.js"></script>
-
-    <!-- Esta libreria me está dando problemas:  $ is not defined -->
-    <script src="/src/js/script_20.1102000.js"></script>
-
-    <script src="/src/js/locale_data_20.1102000.js"></script>
-    <script src="/src/js/Gettext_20.1102000.js"></script>
-    <script>
-      var Koha = {};
-      function _(s) {
-        return s;
-        // dummy function for gettext
-      }
-    </script>
-    <script src="/src/js/i18n_20.1102000.js"></script>
-    <script src="/src/lib/modernizr.min_20.1102000.js"></script>
-    <link
-      type="text/css"
-      href="src/lib/font-awesome/font-awesome.min_20.1102000.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="./src/css/index.css" />
   </head>
 
-  <body id="opac-main" class="branch-default">
-    <div id="wrapper">
-      <div id="header-region" class="noprint">
-        <nav class="navbar navbar-expand">
-          <button id="scrolltocontent">Saltar al contenido principal</button>
-          <h1 id="logo">
-            <a
-              class="navbar-brand"
-              href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-main.pl"
-            >
-              Catálogo en línea
-            </a>
-          </h1>
-
-          <div id="cartDetails" class="cart-message">Su carrito está vacío</div>
-
-          <ul id="cart-list-nav" class="navbar-nav">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="http://pedagogica.metacatalogo.org/#"
-                id="cartmenulink"
-                role="button"
-                title="Reunir ítems en los que esta interesado"
-              >
-                <i
-                  id="carticon"
-                  class="fa fa-shopping-cart fa-icon-black"
-                  aria-hidden="true"
-                ></i>
-                <span class="cartlabel">Carrito</span>
-                <span id="basketcount"></span>
-              </a>
-            </li>
-
-            <li class="divider-vertical"></li>
-
-            <li class="nav-item dropdown">
-              <a
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                href="http://pedagogica.metacatalogo.org/#"
-                id="listsmenu"
-                role="button"
-                title="Mostrar listas"
-                ><i class="fa fa-list fa-icon-black" aria-hidden="true"></i>
-                <span class="listslabel">Listas</span>
-              </a>
-              <div
-                aria-labelledby="listsmenu"
-                role="menu"
-                class="dropdown-menu"
-              >
-                <a
-                  class="dropdown-item"
-                  href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-shelves.pl?op=list&amp;category=1"
-                  tabindex="-1"
-                  role="menuitem"
-                  ><strong>Sus listas</strong></a
-                >
-
-                <a
-                  class="dropdown-item"
-                  href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-shelves.pl?op=add_form"
-                  tabindex="-1"
-                  role="menuitem"
-                  >Ingrese para crear sus propias listas</a
-                >
-              </div>
-              <!-- / .dropdown-menu -->
-            </li>
-            <!-- / .nav-item.dropdown -->
-          </ul>
-          <!-- / .navbar-nav -->
-
-          <div id="header_langmenu">
-            <ul class="navbar-nav">
-              <li class="dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="http://pedagogica.metacatalogo.org/#"
-                  id="langmenu"
-                  role="button"
-                  title="Cambiar de idioma"
-                  ><i class="fa fa-flag fa-icon-black" aria-hidden="true"></i>
-                  <span class="langlabel">Idiomas</span> <b class="caret"></b
-                ></a>
-                <div
-                  aria-labelledby="langmenu"
-                  role="menu"
-                  class="dropdown-menu dropdown-menu-right"
-                >
-                  <a
-                    class="dropdown-item"
-                    href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-changelanguage.pl?language=en"
-                    tabindex="-1"
-                    role="menuitem"
-                  >
-                    English
-                  </a>
-
-                  <a
-                    class="dropdown-item"
-                    href="http://pedagogica.metacatalogo.org/#"
-                    tabindex="-1"
-                    role="menuitem"
-                  >
-                    Español &nbsp;<i class="fa fa-check" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <!-- /# .dropdown-menu -->
-              </li>
-              <!-- / .dropdown -->
-            </ul>
-            <!-- /.nav.pull-right -->
-          </div>
-          <!-- /#header_langmenu -->
-
-          <ul id="members" class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-user.pl"
-                class="nav-link login-link loginModal-trigger"
-                ><i
-                  class="fa fa-user fa-icon-black fa-fw"
-                  aria-hidden="true"
-                ></i>
-                <span class="userlabel">Ingresar a su cuenta</span></a
-              >
-            </li>
-
-            <li class="nav-item search_history">
-              <a
-                class="nav-link login-link"
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search-history.pl"
-                title="Ver su historial de búsqueda"
-                >Historial de búsqueda</a
-              >
-            </li>
-            <li class="divider-vertical"></li>
-            <li class="nav-item">
-              <a
-                class="nav-link logout clearsh"
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search-history.pl?action=delete"
-                title="Eliminar historial de búsqueda"
-                ><i class="fa fa-trash" aria-hidden="true"></i> Limpiar</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <!-- /navbar -->
-      </div>
-      <!-- / header-region -->
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <div id="opac-main-search">
-              <form
-                name="searchform"
-                method="get"
-                action="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search.pl"
-                id="searchform"
-              >
-                <div class="form-row align-items-center">
-                  <div class="col-sm-auto order-1 order-sm-1">
-                    <label for="masthead_search"> Buscar </label>
-                  </div>
-                  <div class="col-sm-auto order-2 order-sm-2">
-                    <select
-                      name="idx"
-                      id="masthead_search"
-                      class="form-control"
-                    >
-                      <option value="">Catálogo de biblioteca</option>
-
-                      <option value="ti">Título</option>
-
-                      <option value="au">Autor</option>
-
-                      <option value="su">Tema</option>
-
-                      <option value="nb">ISBN</option>
-
-                      <option value="ns">ISSN</option>
-
-                      <option value="se">Series</option>
-
-                      <option value="callnum">Signatura</option>
-                    </select>
-                  </div>
-                  <!-- /.col-sm-auto -->
-
-                  <div class="col order-4 order-sm-3">
-                    <input
-                      class="transl1 form-control"
-                      id="translControl1"
-                      name="q"
-                      title="Escriba el término de búsqueda"
-                      type="text"
-                    /><span id="translControl"></span>
-                  </div>
-                  <!-- /.col -->
-
-                  <div class="order-5 col-sm-auto">
-                    <button
-                      type="submit"
-                      id="searchsubmit"
-                      class="btn btn-primary"
-                    >
-                      Ir
-                    </button>
-                  </div>
-                </div>
-                <!-- /.form-row -->
-                <input type="hidden" name="weight_search" value="1" />
-              </form>
-            </div>
-            <!-- /#opac-main-search -->
-          </div>
-          <!-- /.col -->
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__logo">
+          <a href="/">
+            <img
+              src="./src/static/logo-koha.svg"
+              alt="Logo de koha: una imagen con la frase koha de color verde"
+              title="Una imagen con la frase koha de color verde"
+            />
+          </a>
         </div>
-        <!-- /.row -->
 
-        <div class="row">
-          <ul class="nav" id="moresearches">
-            <li class="nav-item">
-              <a
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search.pl"
-                >Búsqueda avanzada</a
-              >
-            </li>
-
-            <li class="nav-item">
-              <a
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-authorities-home.pl"
-                >Búsqueda de autoridad</a
-              >
-            </li>
-
-            <li class="nav-item">
-              <a
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-tags.pl"
-                >Nube de etiquetas</a
-              >
-            </li>
-
-            <li class="nav-item">
-              <a
-                id="library_page"
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-library.pl"
-              >
-                Biblioteca
-              </a>
-            </li>
-          </ul>
-          <!-- /.nav#moresearches -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-
-      <!-- Login form hidden by default, used for modal window -->
-      <div
-        id="loginModal"
-        class="modal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="modalLoginLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="modalLoginLabel">
-                Ingresar a su cuenta
-              </h2>
-              <button
-                aria-label="Cerrar"
-                class="closebtn"
-                data-dismiss="modal"
-                type="button"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <form
-              action="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-user.pl"
-              method="post"
-              name="auth"
-              id="modalAuth"
-            >
-              <input
-                type="hidden"
-                name="has-search-query"
-                id="has-search-query"
-                value=""
+        <ul class="nav__links">
+          <li>
+            <button class="close">X</button>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="./src/icons/nav__cart.svg"
+                alt="icono de carrito de compras"
               />
-              <div class="modal-body">
-                <input type="hidden" name="koha_login_context" value="opac" />
-                <fieldset class="brief">
-                  <label for="muserid">Usuario:</label
-                  ><input type="text" id="muserid" name="userid" />
-                  <label for="mpassword">Contraseña:</label
-                  ><input type="password" id="mpassword" name="password" />
-                </fieldset>
-              </div>
-              <div class="modal-footer">
-                <input class="btn btn-primary" type="submit" value="Ingresar" />
-              </div>
-            </form>
-            <!-- /#auth -->
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /#modalAuth -->
+              Carrito
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="/src/icons/nav__list.svg" alt="" /> Lista de deseos</a
+            >
+          </li>
+          <li>
+            <button class="nav__links--primary">
+              <img
+                src="/src/icons/nav__user.svg"
+                alt="Icono de un usuario"
+                title="Usuario"
+              />Ingresar
+            </button>
+          </li>
+          <li>
+            <button class="menu">
+              <img
+                src="/src/icons/nav__menu.svg"
+                alt="Icono de un usuario"
+                title="Usuario"
+              />
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-      <div class="main">
-        <nav aria-label="miga">
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">
-              <a
-                href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-main.pl"
-                >Inicio</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <div id="notloggedin" class="container-fluid">
-          <div class="row">
-            <div class="col-12 col-lg-9 order-md-1 maincontent">
-              <!-- koha news -->
+    <main class="hero">
+      <div class="hero__searchBox">
+        <div class="hero__searchBox--header">
+          <h1>Busca en Koha</h1>
+          <div class="dropdown">
+            <button class="dropBtn">
+              <img
+                class="dropBtn"
+                src="./src/icons/hero__settings.svg"
+                alt="Icono de engranaje: despliega más opciones de busqueda"
+              />
+            </button>
+            <div class="dropdown__content">
+              <a class="dropdown__link" href="#">Búsqueda avanzada</a>
+              <a class="dropdown__link" href="#">Búsqueda de autoridad </a>
+              <a class="dropdown__link" href="#">Etiquetas</a>
+              <a class="dropdown__link" href="#">Biblioteca</a>
             </div>
-            <!-- / .col 6/8 -->
-
-            <div class="col-12 col-lg-3 order-md-2">
-              <div id="login">
-                <form
-                  action="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-user.pl"
-                  method="post"
-                  name="auth"
-                  id="auth"
-                  autocomplete="off"
-                >
-                  <input type="hidden" name="koha_login_context" value="opac" />
-                  <fieldset class="brief">
-                    <legend>Ingrese a su cuenta:</legend>
-                    <label for="userid">Usuario:</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      id="userid"
-                      name="userid"
-                    />
-                    <label for="password">Contraseña:</label>
-                    <input
-                      class="form-control"
-                      type="password"
-                      id="password"
-                      name="password"
-                    />
-                    <fieldset class="action">
-                      <input
-                        class="btn btn-primary"
-                        type="submit"
-                        value="Ingresar"
-                      />
-                    </fieldset>
-                  </fieldset>
-                </form>
-              </div>
-              <!-- /#login -->
-            </div>
-            <!-- / .col -->
           </div>
-          <!-- /.container-fluid -->
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.main -->
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <div id="report-koha-url">
-              <div class="row justify-content-between">
-                <div class="col">
-                  <div id="koha_url" class="clearfix noprint">
-                    <p>
-                      Con tecnología
-                      <a class="koha_url" href="http://koha-community.org/"
-                        >Koha</a
-                      >
-                    </p>
-                  </div>
-                  <!-- /#koha_url -->
-                </div>
-                <!-- /.col -->
-              </div>
-              <!-- /.row.justify-content-between -->
-            </div>
-            <!-- /#report-koha-url -->
-          </div>
-          <!-- /.col -->
+        <div class="hero__searchBox--inputs">
+          <select name="" id="">
+            <option value="">Catalogo completo</option>
+            <option value="">Autor</option>
+            <option value="">Tema</option>
+            <option value="">Título</option>
+            <option value="">ISBN</option>
+            <option value="">ISSN</option>
+            <option value="">Series</option>
+            <option value="">Signatura</option>
+          </select>
+          <p>
+            <input type="text" placeholder="Buscar..." />
+            <button>
+              <img src="/src/icons/hero__search.svg" alt="Icono de buscar" />
+            </button>
+          </p>
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container-fluid -->
-    </div>
-    <!-- / #wrapper in masthead.inc -->
+    </main>
 
-    <footer id="changelanguage" class="noprint">
-      <ul class="nav">
-        <li class="nav-item">
-          <span class="navbar-text">Idiomas:</span>
-        </li>
+    <section class="categories">
+      <h1>Categorias</h1>
+      <div class="categorie">
+        <h2>Recientemente añadidos:</h2>
+        <div class="categorie__grid"></div>
+      </div>
+    </section>
 
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-changelanguage.pl?language=en"
-          >
-            English
-          </a>
-          <!-- /.nav-link -->
-        </li>
-        <!-- /.nav-item -->
-
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="http://pedagogica.metacatalogo.org/#"
-            tabindex="-1"
-            aria-disabled="true"
-          >
-            Español
-          </a>
-          <!-- /.nav-link -->
-        </li>
-        <!-- /.nav-item -->
-      </ul>
-      <!-- /.nav -->
+    <footer class="footer">
+      <h2>Footer</h2>
     </footer>
-    <!-- / #changelanguage -->
 
-    <!-- JavaScript includes -->
-
-    <script src="src/lib/jquery/jquery-3.4.1.min_20.1102000.js"></script>
-    <script src="src/lib/jquery/jquery-migrate-3.1.0.min_20.1102000.js"></script>
-    <script src="src/lib/jquery/jquery-ui-1.12.1.min_20.1102000.js"></script>
-    <script>
-      // Resolve name collision between jQuery UI and Twitter Bootstrap
-      $.widget.bridge("uitooltip", $.ui.tooltip);
-    </script>
-    <script src="src/lib/boostrap/bootstrap.bundle.min_20.1102000.js"></script>
-    <script src="src/lib/fontfaceobserver.min_20.1102000.js"></script>
-    <script src="/src/js/global_20.1102000.js"></script>
-    <script>
-      Modernizr.load([
-        // Test need for polyfill
-        {
-          test: window.matchMedia,
-          nope: "/opac-tmpl/bootstrap/lib/media.match.min_20.1102000.js",
-        },
-        // and then load enquire
-        "src/lib/enquire.min_20.1102000.js",
-        "src/js/script_20.1102000.js",
-      ]);
-
-      // Fix for datepicker in a modal
-      $.fn.modal.Constructor.prototype.enforceFocus = function () {};
-    </script>
-
-    <script>
-      var MSG_CONFIRM_AGAIN = _(
-        "Advertencia: No puede deshacerse. Por favor confirmar nuevamente"
-      );
-      var MSG_DELETE_SEARCH_HISTORY = _(
-        "¿Está seguro que desea eliminar su historial de búsqueda?"
-      );
-      var MSG_NO_SUGGESTION_SELECTED = _("No se seleccionó ninguna sugerencia");
-      var MSG_SEARCHING = _("Buscando %s...");
-      var MSG_ERROR_SEARCHING_COLLECTION = _(
-        "Error de la búsqueda en la colección %s"
-      );
-      var MSG_NO_RESULTS_FOUND_IN_COLLECTION = _(
-        "No se han encontrado resultados en la colección de la biblioteca %s"
-      );
-      var MSG_RESULTS_FOUND_IN_COLLECTION = _(
-        "Se encontraron %s resultados en la colección de la biblioteca %s"
-      );
-      var MSG_BY = _("por");
-      var MSG_TYPE = _("Tipo");
-      var MSG_NEXT = _("Siguiente");
-      var MSG_PREVIOUS = _("Previo");
-      var MSG_CHECKOUTS = _("Préstamos");
-      var MSG_NO_CHECKOUTS = _("Sin préstamos");
-      var MSG_CHECK_OUT = _("Préstamo");
-      var MSG_CHECK_OUT_CONFIRM = _(
-        "¿Está seguro de querer prestar esta éste ítem?"
-      );
-      var MSG_CHECKED_OUT_UNTIL = _("Prestado hasta %s");
-      var MSG_CHECK_IN = _("Devolución");
-      var MSG_CHECK_IN_CONFIRM = _(
-        "¿Está seguro de querer devolver éste ítem?"
-      );
-      var MSG_NO_CHECKOUTS = _("Sin préstamos");
-      var MSG_DOWNLOAD = _("Bajar");
-      var MSG_HOLDS = _("Reservas");
-      var MSG_NO_HOLDS = _("Sin reservas");
-      var MSG_PLACE_HOLD = _("Hacer reserva");
-      var MSG_CANCEL_HOLD = _("Cancelar");
-      var MSG_CANCEL_HOLD_CONFIRM = _(
-        "¿Está seguro que desea cancelar esta reserva?"
-      );
-      var MSG_ON_HOLD = _("Reservado");
-
-      var MSG_TAGS_DISABLED = _(
-        "Lo sentimos, las etiquetas no están habilitadas en este sistema."
-      );
-      var MSG_TAG_ALL_BAD = _(
-        "Error! Su etiqueta tenía código ilegal. NO ha sido agregada. Intente nuevamente con texto plano."
-      );
-      var MSG_ILLEGAL_PARAMETER = _("¡Error! Parámetro ilegal");
-      var MSG_TAG_SCRUBBED = _(
-        "Nota: su etiqueta contenía código que fue removido. La etiqueta fue agregada como "
-      );
-      var MSG_ADD_TAG_FAILED = _("¡Error! La adición de etiquetas falló en");
-      var MSG_ADD_TAG_FAILED_NOTE = _(
-        "Nota: solo puede etiquetar un ítem con determinado término una vez. Vea 'Mis Etiquetas' para ver sus etiquetas actuales."
-      );
-      var MSG_DELETE_TAG_FAILED = _("Error! No puede eliminar la etiqueta");
-      var MSG_DELETE_TAG_FAILED_NOTE = _(
-        "Nota: sólo puede eliminar sus propias etiquetas."
-      );
-      var MSG_LOGIN_REQUIRED = _(
-        "Debe ingresar a su cuenta para agregar etiquetas."
-      );
-      var MSG_TAGS_ADDED = _("Etiquetas agregadas: ");
-      var MSG_TAGS_DELETED = _("Etiquetas agregadas: ");
-      var MSG_TAGS_ERRORS = _("Errores: ");
-      var MSG_MULTI_ADD_TAG_FAILED = _(
-        "No se pudo agregar una o más etiquetas."
-      );
-      var MSG_NO_TAG_SPECIFIED = _("No se especificó etiqueta.");
-
-      $(".print-large").on("click", function () {
-        window.print();
-        return false;
-      });
-      $("#ulactioncontainer > ul > li > a.addtoshelf").on("click", function () {
-        Dopop("opac-addbybiblionumber.pl?biblionumber=");
-        return false;
-      });
-      $("body").on("click", ".addtocart", function (e) {
-        e.preventDefault();
-        var biblionumber = $(this).data("biblionumber");
-        addRecord(biblionumber);
-      });
-      $("body").on("click", ".cartRemove", function (e) {
-        e.preventDefault();
-        var biblionumber = $(this).data("biblionumber");
-        delSingleRecord(biblionumber);
-      });
-      $(".clearsh").on("click", function () {
-        return confirmDelete(MSG_DELETE_SEARCH_HISTORY);
-      });
-    </script>
-    <script src="/src/js/basket_20.1102000.js"></script>
-    <script src="/src/js/tags_20.1102000.js"></script>
-    <script src="src/lib/jquery/plugins/jquery.cookie.min_20.1102000.js"></script>
-    <script>
-      $(document).ready(function () {
-        if ($("#searchsubmit").length) {
-          $(document).on("click", "#searchsubmit", function (e) {
-            jQuery.removeCookie("form_serialized", { path: "/" });
-            jQuery.removeCookie("form_serialized_limits", { path: "/" });
-            jQuery.removeCookie("num_paragraph", { path: "/" });
-            jQuery.removeCookie("search_path_code", { path: "/" });
-          });
-        }
-      });
-    </script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
