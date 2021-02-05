@@ -15,9 +15,10 @@
       href="http://pedagogica.metacatalogo.org/opac-tmpl/bootstrap/images/favicon.ico"
       type="image/x-icon"
     />
+
     <link
       rel="stylesheet"
-      href="/src/css/jquery-ui-1.12.1.min_20.1102000.css"
+      href="src/lib/jquery/jquery-ui-1.12.1.min_20.1102000.css"
       type="text/css"
     />
 
@@ -34,7 +35,7 @@
       type="text/css"
     />
 
-    <script src="/src/js/enquire.min_20.1102000.js"></script>
+    <script src="/src/lib/enquire.min_20.1102000.js"></script>
 
     <!-- Esta libreria me está dando problemas:  $ is not defined -->
     <script src="/src/js/script_20.1102000.js"></script>
@@ -49,10 +50,10 @@
       }
     </script>
     <script src="/src/js/i18n_20.1102000.js"></script>
-    <script src="/src/js/modernizr.min_20.1102000.js"></script>
+    <script src="/src/lib/modernizr.min_20.1102000.js"></script>
     <link
       type="text/css"
-      href="/src/css/font-awesome.min_20.1102000.css"
+      href="src/lib/font-awesome/font-awesome.min_20.1102000.css"
       rel="stylesheet"
     />
   </head>
@@ -510,15 +511,15 @@
 
     <!-- JavaScript includes -->
 
-    <script src="/src/js/jquery-3.4.1.min_20.1102000.js"></script>
-    <script src="/src/js/jquery-migrate-3.1.0.min_20.1102000.js"></script>
-    <script src="/src/js/jquery-ui-1.12.1.min_20.1102000.js"></script>
+    <script src="src/lib/jquery/jquery-3.4.1.min_20.1102000.js"></script>
+    <script src="src/lib/jquery/jquery-migrate-3.1.0.min_20.1102000.js"></script>
+    <script src="src/lib/jquery/jquery-ui-1.12.1.min_20.1102000.js"></script>
     <script>
       // Resolve name collision between jQuery UI and Twitter Bootstrap
       $.widget.bridge("uitooltip", $.ui.tooltip);
     </script>
-    <script src="/src/js/bootstrap.bundle.min_20.1102000.js"></script>
-    <script src="/src/js/fontfaceobserver.min_20.1102000.js"></script>
+    <script src="src/lib/boostrap/bootstrap.bundle.min_20.1102000.js"></script>
+    <script src="src/lib/fontfaceobserver.min_20.1102000.js"></script>
     <script src="/src/js/global_20.1102000.js"></script>
     <script>
       Modernizr.load([
@@ -528,8 +529,8 @@
           nope: "/opac-tmpl/bootstrap/lib/media.match.min_20.1102000.js",
         },
         // and then load enquire
-        "/src/js/enquire.min_20.1102000.js",
-        "/src/js/script_20.1102000.js",
+        "src/lib/enquire.min_20.1102000.js",
+        "src/js/script_20.1102000.js",
       ]);
 
       // Fix for datepicker in a modal
@@ -633,7 +634,7 @@
     </script>
     <script src="/src/js/basket_20.1102000.js"></script>
     <script src="/src/js/tags_20.1102000.js"></script>
-    <script src="/src/js/jquery.cookie.min_20.1102000.js"></script>
+    <script src="src/lib/jquery/plugins/jquery.cookie.min_20.1102000.js"></script>
     <script>
       $(document).ready(function () {
         if ($("#searchsubmit").length) {
