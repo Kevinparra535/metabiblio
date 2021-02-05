@@ -27,6 +27,13 @@
       height: auto;
       object-fit: cover;
     }
+    select {
+      padding: $space;
+      outline: none;
+      border: none;
+      background: transparent;
+      @include font-size(13px);
+    }
   }
   &__links {
     padding: 0;
@@ -186,6 +193,9 @@
       border: none;
       color: $color-primario;
       background-color: transparent;
+    }
+    button {
+      outline: none;
     }
   }
 }

@@ -17,6 +17,8 @@ dropBtn.addEventListener("click", () =>
   document.querySelector(".dropdown__content").classList.toggle("show")
 );
 
+
+
 window.onclick = function (event) {
   if (!event.target.matches(".dropBtn")) {
     const dropdowns = document.getElementsByClassName("dropdown__content");

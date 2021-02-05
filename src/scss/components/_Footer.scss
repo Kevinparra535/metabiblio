@@ -34,6 +34,14 @@ footer {
       text-decoration: none;
     }
   }
+  select {
+    padding: $space;
+    outline: none;
+    border: none;
+    color: $color-oscuro;
+    background: $color-claro;
+    @include font-size(13px);
+  }
   @include media(desktop-s) {
     padding: $space_x2 $space_x3;
     display: flex;
